@@ -17,4 +17,8 @@ public class HomePage extends PageObject {
             $(".mainMenu").findBy(By.linkText(menuChoice)).click();
         }
     }
+
+    public String getWelcomeMessage() {
+        return getDriver().findElement(By.id("welcome-message")).getText();
+    }
 }
