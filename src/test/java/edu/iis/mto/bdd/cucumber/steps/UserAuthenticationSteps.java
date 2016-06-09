@@ -8,22 +8,16 @@ import cucumber.api.java.en.When;
 import edu.iis.mto.bdd.cucumber.workflowsteps.AuthenticationWorkflowSteps;
 import edu.iis.mto.bdd.model.FrequentFlyerMember;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.junit.Assert.assertThat;
-
 @RunWith(SerenityRunner.class)
 public class UserAuthenticationSteps {
-    private WebDriver driver;
-
     @Steps
     AuthenticationWorkflowSteps authenticationWorkflowSteps;
+    private WebDriver driver;
 
     @Before
     public void init() {
