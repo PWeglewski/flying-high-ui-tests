@@ -7,22 +7,21 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import edu.iis.mto.bdd.cucumber.workflowsteps.AuthenticationWorkflowSteps;
 import edu.iis.mto.bdd.model.FrequentFlyerMember;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
+import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-@RunWith(SerenityRunner.class)
+@RunWith(CucumberWithSerenity.class)
 public class UserAuthenticationSteps {
     @Steps
     AuthenticationWorkflowSteps authenticationWorkflowSteps;
-    private WebDriver driver;
 
-    @Before
-    public void init() {
-        driver = new FirefoxDriver();
-    }
+    @Managed
+    private WebDriver driver;
 
     @Given("^(.*) is a registered Frequent Flyer$")
     public void givenARegisteredFrequentFlyer(FrequentFlyerMember frequentFlyerMember) {
